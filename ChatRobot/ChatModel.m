@@ -17,6 +17,15 @@
     return  self;
 }
 
+-(instancetype)initWithObj:(AVObject*)object{
+    if (self =[super init]) {
+        self.text = object[@"message"];
+        self.time = object[@"time"];
+        self.type = [object[@"type"] integerValue];
+    }
+    return  self;
+}
+
 //-(void)setValue:(id)value forUndefinedKey:(NSString *)key{
 //}
 +(instancetype)chatModelWithDict:(NSDictionary*)dict{

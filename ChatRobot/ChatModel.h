@@ -20,5 +20,6 @@ typedef NS_ENUM(NSInteger,ChatUserType){
 @property(nonatomic,assign)NSInteger type;
 
 -(instancetype)initWithDict:(NSDictionary*)dict;
+-(instancetype)initWithObj:(AVObject*)object;
 +(instancetype)chatModelWithDict:(NSDictionary*)dict;
 @end
