@@ -52,7 +52,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mmV-Yg-6Z7">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -63,18 +63,29 @@
                             <constraint firstItem="C5Y-Ca-K6I" firstAttribute="top" secondItem="mmV-Yg-6Z7" secondAttribute="bottom" id="OhY-pY-GCM"/>
                             <constraint firstAttribute="trailing" secondItem="mmV-Yg-6Z7" secondAttribute="trailing" id="YiK-Z9-ysf"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="C5Y-Ca-K6I" secondAttribute="bottom" id="pCM-tr-V7M"/>
+                            <constraint firstItem="mmV-Yg-6Z7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="xi5-V5-piO"/>
                             <constraint firstItem="mmV-Yg-6Z7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="y0u-K1-c4h"/>
                             <constraint firstItem="mmV-Yg-6Z7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="yhe-VC-nTs"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="yhe-VC-nTs"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="小花" id="KZs-wf-axq"/>
                     <connections>
+                        <outlet property="spinner" destination="2Ve-hg-C5h" id="3WG-aj-OfF"/>
                         <outlet property="tableView" destination="mmV-Yg-6Z7" id="9ef-CY-sNq"/>
                         <outlet property="textField" destination="qby-by-3ex" id="A50-QY-wbY"/>
                         <outlet property="textViewBottomLayout" destination="pCM-tr-V7M" id="o4S-BI-6BE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="2Ve-hg-C5h">
+                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </activityIndicatorView>
             </objects>
             <point key="canvasLocation" x="1092" y="198"/>
         </scene>

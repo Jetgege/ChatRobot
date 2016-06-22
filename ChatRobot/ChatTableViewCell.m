@@ -9,6 +9,9 @@
 #import "ChatTableViewCell.h"
 #import "ChatFrameModel.h"
 #import "ChatModel.h"
+#import "DateConvert.h"
+#import "UIButton+btnCate.h"
+
 @interface ChatTableViewCell()
 
 @property(nonatomic,weak)UILabel *timeLabel;
@@ -18,8 +21,10 @@
 @property(nonatomic,weak)UIButton *contentButton;
 
 @end
+NSString *lastStr = nil;
 
 @implementation ChatTableViewCell
+
 
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
@@ -43,7 +48,6 @@
 #pragma mark-
 #pragma mark-添加子控件setupUI
 -(void)setupUI{
-    
     //1时间
     UILabel *timeLabel=[[UILabel alloc]init];
     _timeLabel=timeLabel;
@@ -63,13 +67,20 @@
     [contentButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     contentButton.titleLabel.numberOfLines=0;
     contentButton.titleLabel.font=[UIFont systemFontOfSize:17];
-    
-    //[contentButton setBackgroundColor:[UIColor orangeColor]];
-    
+    [_contentButton addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
     //设置内边距
     contentButton.contentEdgeInsets=UIEdgeInsetsMake(20, 20, 20, 20);
     
     [self.contentView addSubview:contentButton];
+}
+
+//给聊天文本添加点击事件
+-(void)clickButton:(UIButton*)btn{
+    NSString *url = btn.urlTag;
+    if (url.length!=0) {
+        NSDictionary *dict = [[NSDictionary alloc]initWithObjectsAndKeys:url,@"urlBtn",nil];
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"SafariOpenUrl" object:nil userInfo:dict];
+    }
 }
 
 #pragma mark-
@@ -91,11 +102,17 @@
 -(void)setupData{
     
     ChatModel *chatModel=_chatFrameModel.chatModel;
-    //1.设置时间
-    _timeLabel.text= chatModel.time;
+
+    NSString *timeStr = [DateConvert descriptionStr:chatModel.dateTimes];
+    _timeLabel.text = timeStr;
     _timeLabel.font = [UIFont systemFontOfSize:13];
-   // _timeLabel.hidden=chatModel.isHidenTimeLabel;
     
+    //显示时间的处理
+     _timeLabel.hidden = chatModel.hidenTimeLabel;
+    if ([lastStr isEqualToString:timeStr]) {
+        _timeLabel.hidden = true;
+    }
+   lastStr = timeStr;
     //2.设置头像
     
     if (chatModel.type==ChatUserTypeMe) {//表示自己
@@ -107,15 +124,19 @@
     }else{
         
         _userIcon.image=[UIImage imageNamed:@"other"];
-        //        [_contentButton setBackgroundImage:[UIImage imageNamed:@"chat_recive_press_pic"] forState:UIControlStateNormal];
         UIImage *resizeImage=[self resizeImage:@"chat_recive_press_pic"];
         
         [_contentButton setBackgroundImage: resizeImage forState:UIControlStateNormal];
     }
     
-    //设置文本
-    
+    [_contentButton setUrlTag:nil];
+    if (chatModel.url.length != 0) {
+        NSLog(@"%@",chatModel.url);
+        [_contentButton setUrlTag:chatModel.url];
+    }
+  
     [_contentButton setTitle:chatModel.text forState:UIControlStateNormal];
+
 }
 
 

@@ -68,11 +68,13 @@
     //确定cell的高度
     if (CGRectGetMaxY(_textFrame)>CGRectGetMaxY(_iconFrame)) {
         
-        _cellHeight=CGRectGetMaxY(_textFrame)+margin;
+        //_cellHeight=CGRectGetMaxY(_textFrame)+margin;
+        _cellHeight=CGRectGetMaxY(_textFrame);
         
     }else{
-        
-        _cellHeight=CGRectGetMaxY(_iconFrame)+margin;
+        _cellHeight=CGRectGetMaxY(_iconFrame);
+
+//        _cellHeight=CGRectGetMaxY(_iconFrame)+margin;
     }
 
 }

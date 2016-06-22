@@ -18,11 +18,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //配置LeanClouud
-    [AVOSCloud setApplicationId:@"0AbaiEKM9mE8tAy8BCaBsCy0-gzGzoHsz"
-                      clientKey:@"qcPCgCKJ3SxR9Ig6brhfMHCb"];
+    [AVOSCloud setApplicationId:@"y5r75BzqWXtYSQScpi08W2MX-gzGzoHsz"
+                      clientKey:@"vFhJExqUbTphogNm7KRHg3CI"];
     
     return YES;
 }
 
+-(void)applicationDidEnterBackground:(UIApplication *)application{
+
+    [[UIApplication　sharedApplication] sendAction:@selector(resignFirstResponder)to:nil from:nil forEvent:nil];
+}
 
 @end

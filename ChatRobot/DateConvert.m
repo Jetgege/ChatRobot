@@ -1,64 +1,47 @@
 //
-//  NsDateFormater.m
+//  DateConvert.m
 //  ChatRobot
 //
 //  Created by Jet on 16/6/22.
 //  Copyright © 2016年 Jet. All rights reserved.
 //
 
-#import "NsDateFormater.h"
+#import "DateConvert.h"
 
-@implementation NsDateFormater
-/**
- 根据根式字符串返回一个
- - parameter timeStr:      字符串格式时间
- - parameter formatterStr: 字符串时间对应的格式
- - returns: NSDate
- */
-+(NSDate*)createDate:(NSString*)timeStr andFormatter:(NSString*)formatterStr{
-    
-    // timeStr = "Sat May 13 11:31:11 +0800 2015"
-    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
-    formatter.dateFormat =  formatterStr;
-    //如果不指定以下代码真机中肯能无法转换,设置时区
-   
-    [formatter setLocale: [[NSLocale alloc]initWithLocaleIdentifier:@"en"]];
-    //返回NSDate
-
-    return  [formatter dateFromString:timeStr];
-}
-
+@implementation DateConvert
 /**
  生成当前时间对应的字符串
  　  - returns: 对应时间格式
  */
--(NSString*)descriptionStr{
++(NSString*)descriptionStr:(NSDate*)timeD{
     
     //１.创建时间格式化对象
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
-
+    
     //如果不指定以下代码真机中肯能无法转换,设置时区
-    [formatter setLocale: [[NSLocale alloc]initWithLocaleIdentifier:@"en"]];
+    [formatter setLocale: [[NSLocale alloc]initWithLocaleIdentifier:@"zh"]];
     
     //创建一个日历类
     NSCalendar *calendar =[NSCalendar currentCalendar];
     //定义变量记录时间格式
     NSString *formatterStr = @"HH:mm";
     
-    if ([calendar isDateInToday:self]) {
+    if ([calendar isDateInToday:timeD]) {
         //今天
-        NSInteger interval = [[NSDate date]timeIntervalSinceDate:self];
+        NSInteger interval = [[NSDate date]timeIntervalSinceDate:timeD];
         if (interval<60) {
             return @"刚刚";
         }else if(interval<(60*60)){
-            
-            return  @"\(interval/60)分钟前";
+            NSInteger result = interval/60;
+            return  [NSString stringWithFormat:@"%ld分钟前",result];
         }else {
             //else if(interval<60*60*24)
-            return  @"\(interval/(60*60))小时前";
+            NSInteger result = (interval/(60*60));
+            return [NSString stringWithFormat:@"%ld小时前",result];
+//            @"\(interval/(60*60))小时前";
             
         }
-    }else if ([calendar isDateInYesterday:self]){
+    }else if ([calendar isDateInYesterday:timeD]){
         
         formatterStr = [NSString stringWithFormat:@"%@%@",@"昨天 ",formatterStr];
         
@@ -66,18 +49,18 @@
         
         //该方法可以获取两个时间之间的差值  NSCalendarUnit.Year年的差值
         
-      NSDateComponents *comps = [calendar components:NSCalendarUnitYear fromDate:self toDate:[NSDate date] options:0];
+        NSDateComponents *comps = [calendar components:NSCalendarUnitYear fromDate:timeD toDate:[NSDate date] options:0];
         if (comps.year>=1){
             //更早时间
             formatterStr = [NSString stringWithFormat:@"%@%@",@"yyyy-MM-dd ",formatterStr];
-
+            
         }else{
             //一年以内
             formatterStr = [NSString stringWithFormat:@"%@%@",@"MM-dd ",formatterStr];
         }
     }
     formatter.dateFormat = formatterStr;
-    return [formatter stringFromDate:self];
+    return [formatter stringFromDate:timeD];
     
 }
 

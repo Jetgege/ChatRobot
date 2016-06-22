@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 @class ChatFrameModel;
+
 @interface ChatTableViewCell : UITableViewCell
+
 @property (nonatomic,strong)ChatFrameModel *chatFrameModel;
 @end

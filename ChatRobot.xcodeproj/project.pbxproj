@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		8E5821A500EDE354D9348F93 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6011B11175BE215EFE2712 /* libPods.a */; };
-		C539F2371D19BA7D00C82534 /* NsDateFormater.m in Sources */ = {isa = PBXBuildFile; fileRef = C539F2361D19BA7D00C82534 /* NsDateFormater.m */; };
+		C54CA61F1D1A896800995B43 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C54CA61E1D1A896800995B43 /* SafariServices.framework */; };
+		C54CA6241D1A984900995B43 /* UIButton+btnCate.m in Sources */ = {isa = PBXBuildFile; fileRef = C54CA6231D1A984900995B43 /* UIButton+btnCate.m */; };
 		C57627701D1942B100B5B3D3 /* CloudData.m in Sources */ = {isa = PBXBuildFile; fileRef = C576276F1D1942B100B5B3D3 /* CloudData.m */; };
 		C57627731D19647E00B5B3D3 /* NetWorkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C57627721D19647E00B5B3D3 /* NetWorkTool.m */; };
+		C58DB2E11D1A4A4A00245F62 /* DateConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = C58DB2E01D1A4A4A00245F62 /* DateConvert.m */; };
 		C5D8AD801D181E9D00C6FAB8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D8AD7F1D181E9D00C6FAB8 /* main.m */; };
 		C5D8AD831D181E9D00C6FAB8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D8AD821D181E9D00C6FAB8 /* AppDelegate.m */; };
 		C5D8AD861D181E9D00C6FAB8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D8AD851D181E9D00C6FAB8 /* ViewController.m */; };
@@ -28,13 +30,16 @@
 		0E9BBE328674277ED119952A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		1B6011B11175BE215EFE2712 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		94DC6E82CE0C363BC22952B5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		C539F2351D19BA7D00C82534 /* NsDateFormater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NsDateFormater.h; sourceTree = "<group>"; };
-		C539F2361D19BA7D00C82534 /* NsDateFormater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NsDateFormater.m; sourceTree = "<group>"; };
+		C54CA61E1D1A896800995B43 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		C54CA6221D1A984900995B43 /* UIButton+btnCate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+btnCate.h"; sourceTree = "<group>"; };
+		C54CA6231D1A984900995B43 /* UIButton+btnCate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+btnCate.m"; sourceTree = "<group>"; };
 		C576276D1D18F3FC00B5B3D3 /* ChatRobot.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatRobot.pch; sourceTree = "<group>"; };
 		C576276E1D1942B100B5B3D3 /* CloudData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloudData.h; sourceTree = "<group>"; };
 		C576276F1D1942B100B5B3D3 /* CloudData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloudData.m; sourceTree = "<group>"; };
 		C57627711D19647E00B5B3D3 /* NetWorkTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkTool.h; sourceTree = "<group>"; };
 		C57627721D19647E00B5B3D3 /* NetWorkTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkTool.m; sourceTree = "<group>"; };
+		C58DB2DF1D1A4A4A00245F62 /* DateConvert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateConvert.h; sourceTree = "<group>"; };
+		C58DB2E01D1A4A4A00245F62 /* DateConvert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateConvert.m; sourceTree = "<group>"; };
 		C5D8AD7B1D181E9D00C6FAB8 /* ChatRobot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatRobot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5D8AD7F1D181E9D00C6FAB8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C5D8AD811D181E9D00C6FAB8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -61,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C54CA61F1D1A896800995B43 /* SafariServices.framework in Frameworks */,
 				8E5821A500EDE354D9348F93 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,8 +92,10 @@
 				C576276D1D18F3FC00B5B3D3 /* ChatRobot.pch */,
 				C57627711D19647E00B5B3D3 /* NetWorkTool.h */,
 				C57627721D19647E00B5B3D3 /* NetWorkTool.m */,
-				C539F2351D19BA7D00C82534 /* NsDateFormater.h */,
-				C539F2361D19BA7D00C82534 /* NsDateFormater.m */,
+				C58DB2DF1D1A4A4A00245F62 /* DateConvert.h */,
+				C58DB2E01D1A4A4A00245F62 /* DateConvert.m */,
+				C54CA6221D1A984900995B43 /* UIButton+btnCate.h */,
+				C54CA6231D1A984900995B43 /* UIButton+btnCate.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -170,6 +178,7 @@
 		CBDBD40ECDB2F58560AFA41F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C54CA61E1D1A896800995B43 /* SafariServices.framework */,
 				1B6011B11175BE215EFE2712 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -298,9 +307,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C54CA6241D1A984900995B43 /* UIButton+btnCate.m in Sources */,
 				C5D8AD861D181E9D00C6FAB8 /* ViewController.m in Sources */,
+				C58DB2E11D1A4A4A00245F62 /* DateConvert.m in Sources */,
 				C5D8ADAB1D1843C600C6FAB8 /* ChatViewController.m in Sources */,
-				C539F2371D19BA7D00C82534 /* NsDateFormater.m in Sources */,
 				C5D8ADB11D18468000C6FAB8 /* ChatFrameModel.m in Sources */,
 				C5D8AD831D181E9D00C6FAB8 /* AppDelegate.m in Sources */,
 				C5D8AD9D1D182F6300C6FAB8 /* ChatModel.m in Sources */,
