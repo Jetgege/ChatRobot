@@ -7,7 +7,7 @@
 //
 
 #import "NetWorkTool.h"
-//#import "AFHTTPSessionManager.h"
+
 @implementation NetWorkTool
 
 +(void)post:(NSString*)chatText andFinish:(void (^)(NSDictionary * dict, NSError *error))finished

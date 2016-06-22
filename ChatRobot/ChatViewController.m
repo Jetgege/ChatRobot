@@ -120,6 +120,7 @@ NSString *identifier =@"ChatCell";
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillDisAppear:) name:UIKeyboardWillHideNotification
                                                object:nil];
+   //监听SFSafariViewController的使用
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(safariOpenUrl:) name:@"SafariOpenUrl"  object:nil];
 }
 
@@ -145,11 +146,15 @@ NSString *identifier =@"ChatCell";
     //键盘弹出时的Y值
     CGRect keyboardRect=[dict[UIKeyboardFrameBeginUserInfoKey] CGRectValue];
     CGFloat keyboardBegingY=keyboardRect.origin.y;
-    
+    NSLog(@"%f",keyboardBegingY);
     //键盘弹出后的Y值
     CGRect tempRect=[dict[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     CGFloat keyboardEndY=tempRect.origin.y;
+    NSLog(@"%f",keyboardEndY);
     
+    if (ABS(keyboardBegingY-keyboardEndY)<10) {
+        return;
+    }
    [UIView animateWithDuration:interval animations:^{
        self.view.transform=CGAffineTransformMakeTranslation(0, keyboardEndY-keyboardBegingY);
    } completion:^(BOOL finished) {
